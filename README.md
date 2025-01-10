@@ -5,13 +5,15 @@ Welcome to the **ERA LTEs Analysis Repository**, part of the Excellence in Agron
 The dataset contains 34815 individual outcomes from 181 long-term experiments (LTEs) derived from 211 unique publications. These come from 260 sites in 28 countries. The average number of observations per study is 99 and the average duration of LTEs is 13.5 years.
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/user-attachments/assets/5f9a3750-3135-48ea-a792-82ca028d3b5b" alt="Image 1" width="45%" />
-    <img src="https://github.com/user-attachments/assets/c1cadbb6-3366-4eef-9bc3-b32d807a7d9b" alt="Image 2" width="45%" />
+    <img src="https://github.com/user-attachments/assets/5f9a3750-3135-48ea-a792-82ca028d3b5b" alt="duration" width="45%" />
+    <img src="https://github.com/user-attachments/assets/c1cadbb6-3366-4eef-9bc3-b32d807a7d9b" alt="location" width="45%" />
 </div>
 
 LTES cover a range of agronomic management practices and experimental outcomes.
-![image](https://github.com/user-attachments/assets/58e593ec-a853-4183-8711-feba1bf409d1)
-![image](https://github.com/user-attachments/assets/059ee4d1-3a5b-47cd-ac7a-4a23acc452ed)
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/user-attachments/assets/58e593ec-a853-4183-8711-feba1bf409d1" alt="Image 1" width="45%" />
+    <img src="https://github.com/user-attachments/assets/059ee4d1-3a5b-47cd-ac7a-4a23acc452ed" alt="Image 2" width="45%" />
+</div>
 
 
 ## Purpose
