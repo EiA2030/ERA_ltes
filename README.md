@@ -5,6 +5,7 @@ Welcome to the **ERA LTEs Analysis Repository**, part of the Excellence in Agron
 ## Purpose
 
 The purpose of this repository is to:
+- Provide access to a large synthesis dataset of harmonized agronomic LTEs.
 - Analyze and visualize the performance of LTEs using robust statistical and geospatial methods.
 - Investigate the impact of climate variables on LTE outcomes.
 - Provide a systematic mapping and meta-analysis framework for agricultural research.
