@@ -76,7 +76,6 @@ This repository uses the following data sources:
 
 This project is licensed under the [GPL-3.0 License](https://opensource.org/licenses/GPL-3.0).
 
-![Picture1](https://github.com/user-attachments/assets/6980c2e0-3c06-4716-8f74-629a5dabf999)
-
+![Logos](https://github.com/user-attachments/assets/d3112c9d-6392-46a2-9fc6-8d0b72e6aec1)
 
 
