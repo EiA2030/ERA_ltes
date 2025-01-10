@@ -62,9 +62,10 @@ This project is led and implemented by the **Climate Action Lever** of the **All
    - Utilizes statistical and geospatial approaches to gain insights into LTE contributions.
 ---
 ## How to Use
+
 To explore the data and analyses, open the `era_ltes.Rmd` file in RStudio and knit the document. This will generate an HTML report with comprehensive visualizations and insights.
-Note that the `climate data` code block line `POWER.CHIRPS <- arrow::open_dataset("s3://digital-atlas/era/geodata/POWER.CHIRPS.parquet")` is connecting to a large cloud stored parquet file,
-it can take several minutes for this file to load even with a fast connection, please be patient.
+Note that the `climate data` code block line `POWER.CHIRPS <- arrow::open_dataset("s3://digital-atlas/era/geodata/POWER.CHIRPS.parquet")` is connecting to a large cloud stored parquet file,it can take several minutes for this file to load even with a fast connection, please be patient.
+
 ---
 ## Data Sources
 
