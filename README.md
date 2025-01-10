@@ -1,4 +1,4 @@
-# ERA LTEs Analysis Repository
+# Long-term Experiments in Agronomy Dataset & Analysis: Part of the ERA data ecosystem
 
 Welcome to the **ERA LTEs Analysis Repository**, part of the Excellence in Agronomy Initiative (EiA). This repository contains R code and a vignette for analyzing the performance of long-term agronomic experiments (LTEs). The primary focus is on integrating climate data to explore the impact of climate on experimental outcomes, such as yield and economic performance.
 
