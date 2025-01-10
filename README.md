@@ -10,12 +10,9 @@ The dataset contains 34815 individual outcomes from 181 long-term experiments (L
 </div>
 
 LTES cover a range of agronomic management practices and experimental outcomes.
-<div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/user-attachments/assets/79dffbf6-0a26-4cc4-b531-9055adf1e394)" alt="Image 3" width="45%" />
-    <img src="https://github.com/user-attachments/assets/eeb52e7b-1d1a-4027-9841-4a934576e1ca)" alt="Image 4" width="45%" />
-</div>
+![image](https://github.com/user-attachments/assets/58e593ec-a853-4183-8711-feba1bf409d1)
+![image](https://github.com/user-attachments/assets/059ee4d1-3a5b-47cd-ac7a-4a23acc452ed)
 
----
 
 ## Purpose
 
