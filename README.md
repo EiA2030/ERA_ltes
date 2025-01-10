@@ -15,9 +15,8 @@ This work is supported under the **Climate** area of work within the **CGIAR Exc
 
 ## Team
 
-This project is led and implemented by the **Climate Action Lever** of the **Alliance of Bioversity International and CIAT**.  
+This project is led and implemented by the **Climate Action Lever** of the **Alliance of Bioversity International and CIAT**.
 
-### Core Team:
 - **Lolita Muller** – *Research Associate and Lead Developer*  
   Email: [m.lolita@cgiar.org](mailto:m.lolita@cgiar.org)  
 - **Todd Rosenstock** – *Principal Scientist*  
@@ -26,9 +25,6 @@ This project is led and implemented by the **Climate Action Lever** of the **All
   Email: [p.steward@cgiar.org](mailto:p.steward@cgiar.org)  
 - **Namita Joshi** – *Senior Research Associate*  
   Email: [n.joshi@cgiar.org](mailto:n.joshi@cgiar.org)  
-
-### Doers:  
-The team of implementers and collaborators for this work are part of the **Climate Action Lever** of the **Alliance of Bioversity International and CIAT**.
 
 ## Contents
 
