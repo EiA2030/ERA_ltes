@@ -104,7 +104,7 @@ As part of this update, a dedicated search for LTEs was conducted, and the extra
 
 For each paper, data from tables, text, and figures were extracted into an Excel format. Each paper was linked to a dedicated Excel file containing detailed information on the journal, authors, location, soil characteristics, duration,experimental design, practices,treatment comparisons, crops, varieties, outcomes, and measurements and more.
 
-[Link to excel data extraction template](https://github.com/CIAT/ERA_dev/blob/main/data_entry/industrious_elephant_2023/excel_data_extraction_template/V2.0.28%20-%20Industrious%20Elephant.xlsm)
+Link to excel template:https://cgiar-my.sharepoint.com/:x:/r/personal/p_steward_cgiar_org/Documents/ERA/Data%20Entry/Data%20Entry%202023/Excel%20Template/V2.0.28%20-%20Industrious%20Elephant.xlsm?d=w7b6da0ee08c74bc5acc0567c23a2a79e&csf=1&web=1&e=LErfWY
 
 ### Link to training materials
 
@@ -112,31 +112,27 @@ Enumerators participated in an intensive training program spanning 4 to 6 weeks.
 
 To further support the learning process, the training materials included a detailed breakdown of the training sessions, practical exercises, resource documents, and instructional videos. These resources offered step-by-step guidance to ensure that extractors were well-prepared for their tasks.
 
-[Link to training materials](s3://digital-atlas/era/data_entry/industrious_elephant_2023/training_materials)
+Link to training materials: s3://digital-atlas/era/data_entry/industrious_elephant_2023/training_materials
 
 Following the training, ongoing support was provided through daily meetings to resolve challenges as they arose. Slack served as a platform for rapid communication and feedback, fostering collaboration among peers and project leads.
 
 Despite these efforts, occasional errors were inevitable. To uphold data quality, the Four Eyes Principle was adopted. Each article's extraction underwent a secondary review by another enumerator, a project lead, or both. This rigorous process ensured that errors were identified and corrected, maintaining a high standard of data accuracy and integrity.
 
 ### Link to data extracted from publications using ERA extraction templates
-[2020 majestic_hippo](s3://digital-atlas/era/data_entry/majestic_hippo_2020/excel_files/majestic_hippo_2020.zip). 
-[2022 skinny_cow](s3://digital-atlas/era/data_entry/skinny_cow_2022/excel_files/skinny_cow_2022.zip)
-[2023 industrious_elephant](s3://digital-atlas/era/data_entry/industrious_elephant_2023/excel_files/industrious_elephant_2023.zip)
+2020 s3://digital-atlas/era/data_entry/majestic_hippo_2020/excel_files/majestic_hippo_2020.zip
+2022 s3://digital-atlas/era/data_entry/skinny_cow_2022/excel_files/skinny_cow_2022.zip
+2023 s3://digital-atlas/era/data_entry/industrious_elephant_2023/excel_files/industrious_elephant_2023.zip
 
 ## How data were imported
 ### ERA github
-
-The code used to import and compile the dataset from the excel files is in the ERAg R package using R 4.2.1 (R Development Team) and may be downloaded from GitHub https://github.com/CIAT/ERA_dev. This github is under continual development.  
-  
-Here are some examples of the types of functionality provided and documented:
-
-- [Import data from excels](https://github.com/CIAT/ERA_dev/tree/main/R/import)
-- [Comparison logic](https://github.com/CIAT/ERA_dev/tree/main/R/comparisons)
-- [Compile data from different extraction rounds into a single simplified table](https://github.com/CIAT/ERA_dev/blob/main/R/compile/compile_datasets.R)
-- [Scripts to enrich ERA data with geospatial information](https://github.com/CIAT/ERA_dev/tree/main/R/add_geodata)
+The code used to import and compile the dataset from the excel files is in the ERAg R package using R 4.2.1 (R Development Team) and may be downloaded from GitHub https://github.com/CIAT/ERA_dev. This github is under continual development. Here are some examples of the types of functionality provided and documented:
+ - Import data from excels: https://github.com/CIAT/ERA_dev/tree/main/R/import
+ - Comparison logic: https://github.com/CIAT/ERA_dev/tree/main/R/comparisons
+ - Compile data from different extraction rounds into a single simplified table: https://github.com/CIAT/ERA_dev/blob/main/R/compile/compile_datasets.R
+ - Scripts to enrich ERA data with geospatial information: https://github.com/CIAT/ERA_dev/tree/main/R/add_geodata
 
 ## Download imported ERA data from s3 bucket
-Data is available and can be downloaded from the S3 Bucket `s3://digital-atlas/era/data/` as it follows : 
+Data is available and can be downloaded from the S3 Bucket as it follows : 
 ```{r download ERA dataset}
 #download most recent version of the data 
 
@@ -146,7 +142,7 @@ era_s3<-"s3://digital-atlas/era"
 
 # List the files in the s3 bucket
 files<-s3$dir_ls(file.path(era_s3,"data"))
-# This is the most recent version of the data s3://digital-atlas/era/data/industrious_elephant_2023-YYYY-MM-DD.RData
+# This is the most recent version of the datas3://digital-atlas/era/data/industrious_elephant_2023-YYYY-MM-DD.RData
 files<-tail(grep(".RData",grep("industrious_elephant_2023",files,value=T),value=T),1)
 
 # Create a folder to store downloaded data
@@ -165,8 +161,8 @@ if(!file.exists(save_path)){
 Tables<- miceadds::load.Rdata2(file=basename(save_path),path=dirname(save_path))
 ```
 
-## ERA vocabulary & meta-data
-An excel workbook called [era_master_sheet.xlsx](https://github.com/peetmate/era_codes/raw/main/era_master_sheet.xlsx) is the source of truth for the controlled ERA vocabularly. One of the most useful tabs in this workbook contains the meta-data that describes the fields in the ERA tables is called 'era_fields_v2'.
+## Import ERA vocabulary
+This excel workbook is the source of truth for the controlled ERA vocabularly, one of the most useful tables containes meta-data that describes the fields in the ERA tables (see the 'Tables' object created above) the table is called 'era_fields_vs'
 ```{r import ERA vocab}
     era_vocab_url<-"https://github.com/peetmate/era_codes/raw/main/era_master_sheet.xlsx"
     era_vocab_local<-file.path(getwd(),download_dir,"era_master_sheet.xlsx")
@@ -190,20 +186,15 @@ metadata<-master_codes$era_fields_v2[industrious_elephant_2023==T,.(Table,Field,
 # Choose table in the data model
 selected_table<-"Pub.Out"
 
-# Add an interactive selection for the table
-table_choices <- metadata[, unique(Table)]
-selectInput("selected_table", "Select a Table:", choices = table_choices,selected = "Pub.Out")
-
 # Display the meta-data for the selected table
-renderDT({
-  DT::datatable(
-    metadata[Table == input$selected_table, !"Table"], # Dynamically filter by selected table
-    options = list(
-      scrollY = "400px",  # Set vertical scroll height
-      pageLength = 20     # Initial number of rows displayed
-    )
+DT::datatable(
+  metadata[Table==selected_table,!"Table"], # filter to selected table
+
+  options = list(
+    scrollY = "400px",  # Set vertical scroll height
+    pageLength = 20     # Initial number of rows displayed
   )
-})
+)
 ```
 
 ## Subsetting the data to LTEs
@@ -256,8 +247,10 @@ cat("Number of unique LTEs:", length(unique(filtered_Tables$Pub.Out$LTE.ID)), "\
 The result is a collection of 41 tables, each containing specific information relevant to the dataset.
 
 ```{r unique names,message=FALSE}
+
 unique_names <- names(filtered_Tables)
 unique_names
+
 ```
 The main tables are :
 
@@ -313,28 +306,10 @@ This section provides an in-depth exploration of Long Term Experiment (LTE) data
 
 **Practice Bundles**: Analyzing common bundles of practices used in LTEs. An UpSet plot visualizes the overlap of practices across LTEs, highlighting which practices are commonly applied together.
 
-## Data Coverage
-```{r data coverage}
-pub_no<-filtered_Tables$Pub.Out[,length(unique(B.Code))]
 
-lte_no<-filtered_Tables$Pub.Out[,length(unique(LTE.ID))]
+## Duration of Long-Term Experiments
 
-country_no<-filtered_Tables$Site.Out[,length(unique(Country))]
-
-site_no<-filtered_Tables$Site.Out[,length(unique(Site.ID))]
-
-observation_no<-filtered_Tables$Data.Out[,.N]
-
-obs_average<-filtered_Tables$Data.Out[,.(N=.N),by=.(LTE.ID,Site.ID)][,round(mean(N),0)]
-
-duration_average<-filtered_Tables$Data.Out[,.(duration=max(Exp.Duration,na.rm=T)),.(B.Code,LTE.ID)][,round(mean(duration,na.rm=T),1)]
-```
-
-The dataset of `r observation_no` individual outcomes includes a total of `r lte_no` long-term experiments (LTEs) derived from `r pub_no` unique publications. These come from `r site_no` sites in `r country_no` countries. The average number of observations per study is `r obs_average` and the average duration of LTEs is `r duration_average` years.
-
-## Duration of LTEs
-
-To effectively visualize the duration of LTES, we grouped them into categorized duration ranges. This approach helps organize the experiments into manageable categories, allowing us to create a clear and easily interpretable plot, especially given the large volume of papers in our dataset. 
+To effectively visualize the duration of Long Term Experiments, we grouped them into categorized duration ranges. This approach helps organize the experiments into manageable categories, allowing us to create a clear and easily interpretable plot, especially given the large volume of papers in our dataset. 
 
 ```{r lte duration,warning=FALSE}
 
@@ -402,6 +377,7 @@ print(duration_plot)
 ```
 
 ## Geographic Distribution of LTEs
+
 Long Term Experiment data was collected for Africa and South Asia, with each experiment linked to a specific location through its coordinates, enabling precise mapping of the data. 
 
 ```{r geog dist,warning=FALSE,fig.width=6, fig.height=4,fig.align='center'}
@@ -1451,15 +1427,16 @@ ii <- fluidPage(
       )
     ),
     mainPanel(
-      plotOutput("climatePlot",height="600px"),
+      plotOutput("climatePlot"),
       conditionalPanel(
         condition = "input.show_yields == true",
-        plotOutput("yieldPlot",height="400px")
+        plotOutput("yieldPlot")
       ),
       tableOutput("climateSummary")
     )
   )
 )
+
 
 # Server
 server <- function(input, output, session) {
