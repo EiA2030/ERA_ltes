@@ -17,8 +17,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,       # Collapse code and output in chunks
   comment = "#>")
 
-# Please run getwd() in the console to get the project location and copy into the line below
-#setwd("C:/Users/mlolita/OneDrive - CGIAR/ERA/LTEs 2024/script/vignettes")
 
 ```
 
@@ -1077,7 +1075,7 @@ DT::datatable(
 
 This section features interactive visualizations that allow you to explore climate data for selected locations. You can choose a specific location and variable (e.g., precipitation or temperature) to view the corresponding climate trends. A dashed black line represents the historical mean for the selected variable, while red bars indicate abnormal climate years for the chosen variable and location.
 
-If you select a crop, its climate requirements will be displayed as red dashed lines, highlighting the ideal range for that crop. Additionally, you have the option to display yield data, calculated based on all available yield information for the selected location and crop.
+If you select a crop, its climate requirements will be displayed as red dashed lines, highlighting the ideal range for that crop. Additionally, you have the option to display yield data, calculated based on all available yield information for the selected location and crop. Climate requirement data for crops was extracted from [Concern Worlwide](https://admin.concern.net/sites/default/files/media/migrated/crop_weather_and_climate_vulnerability_profiles_.pdf)
 
 ```{r climate data, message=FALSE,message=FALSE,warning=FALSE}
 
